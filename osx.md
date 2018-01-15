@@ -14,3 +14,5 @@ pf.conf例
 # ループバックのxxxxxポートから、yyyyyポートへのinパケットをドロップする
 block in on lo0 proto tcp from self port xxxxx to self port yyyyy
 ```
+
+[書式](https://man.openbsd.org/pf.conf)
