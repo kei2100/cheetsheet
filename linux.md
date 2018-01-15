@@ -10,6 +10,11 @@ bash$ diff <(cat txt1) <(cat txt2)
 $ cat /proc/<pid>/environ | strings
 ```
 
+##### psで表示項目選択
+```bash
+$ ps -o user,group,pid,ppid,c,start_time,tty,time,comm
+```
+
 ### navigate
 ##### 前のディレクトリに戻る
 ```bash
