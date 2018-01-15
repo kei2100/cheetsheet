@@ -10,3 +10,8 @@ bash$ diff <(cat txt1) <(cat txt2)
 $ cat /proc/<pid>/environ | strings
 ```
 
+### navigate
+##### 前のディレクトリに戻る
+```bash
+$ cd -
+```
