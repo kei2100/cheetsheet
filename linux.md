@@ -20,3 +20,10 @@ $ ps -o user,group,pid,ppid,c,start_time,tty,time,comm
 ```bash
 $ cd -
 ```
+
+##### mkdirした先に移動
+
+```bash
+$ mkdir foo && cd $_
+# $_ means the last argument to the previous command.
+```
