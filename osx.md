@@ -16,3 +16,8 @@ block in on lo0 proto tcp from self port xxxxx to self port yyyyy
 ```
 
 [書式](https://man.openbsd.org/pf.conf)
+
+
+### Finder
+##### 隠しファイル表示
+`cmd + shift + .`
