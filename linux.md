@@ -27,3 +27,8 @@ $ cd -
 $ mkdir foo && cd $_
 # $_ means the last argument to the previous command.
 ```
+
+##### symlinkの実体に移動
+```
+$ cd -P <link>
+```
