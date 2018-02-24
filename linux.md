@@ -27,10 +27,10 @@ $ nc -u <host> <port>
 # 送信元の指定
 $ nc -s <from_ip> -p <from_port> <host> <port>
 
-# TCP echo server
+# TCP listen
 $ nc -l <port>
 
-# UDP echo server
+# UDP listen
 $ nc -lu <port>
 ```
 
