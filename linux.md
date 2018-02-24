@@ -15,6 +15,25 @@ $ cat /proc/<pid>/environ | strings
 $ ps -o user,group,pid,ppid,c,start_time,tty,time,comm
 ```
 
+### network
+##### 疎通確認
+```bash
+# TCP 
+$ nc <host> <port>
+
+# UDP
+$ nc -u <host> <port>
+
+# 送信元の指定
+$ nc -s <from_ip> -p <from_port> <host> <port>
+
+# TCP echo server
+$ nc -l <port>
+
+# UDP echo server
+$ nc -lu <port>
+```
+
 ### navigate
 ##### 前のディレクトリに戻る
 ```bash
