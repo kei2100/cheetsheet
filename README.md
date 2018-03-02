@@ -1,1 +1,1 @@
-# cmd-cheetsheet
+# cheetsheet
