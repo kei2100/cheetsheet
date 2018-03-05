@@ -1,0 +1,13 @@
+### mongoshell
+```
+# db
+show dbs
+use {db_name}
+
+# collection
+db.getCollectionNames()
+
+# document
+db.{col_name}.count()
+
+```
