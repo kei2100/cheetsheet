@@ -5,9 +5,8 @@ show dbs
 use {db_name}
 
 # collection
-db.getCollectionNames()
+show collections
 
 # document
 db.{col_name}.count()
-
 ```
