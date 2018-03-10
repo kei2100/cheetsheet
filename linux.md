@@ -51,3 +51,14 @@ $ mkdir foo && cd $_
 ```
 $ cd -P <link>
 ```
+
+### filesystem
+##### symlink保持して
+```
+$ cp -R
+
+$ zip dst.zip -yr src
+```
+
+
+
