@@ -9,3 +9,7 @@ access_log  logs/access.upstream.log  upstreamlog;
 ```
 
 http://nginx.org/en/docs/http/ngx_http_upstream_module.html
+
+### ProxyProtocol
+
+https://docs.nginx.com/nginx/admin-guide/load-balancer/using-proxy-protocol/
