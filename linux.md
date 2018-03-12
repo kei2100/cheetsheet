@@ -34,6 +34,13 @@ $ nc -l <port>
 $ nc -lu <port>
 ```
 
+##### tcpdump
+```bash
+# ASCII表示でループバックアドレス:８０への通信をダンプ
+$ tcpdump -A -i lo0 port 80 
+
+```
+
 ### navigate
 ##### 前のディレクトリに戻る
 ```bash
