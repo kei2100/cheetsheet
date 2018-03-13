@@ -67,5 +67,21 @@ $ cp -R
 $ zip dst.zip -yr src
 ```
 
+## OS
+##### version
+```
+# os
+$ uname -a
 
+# ubuntu
+$ cat /etc/os-release
 
+# centos
+cat /etc/redhat-release
+
+# amazon linux
+cat /etc/system-release
+
+# alipine
+cat /etc/alpine-release 
+```
