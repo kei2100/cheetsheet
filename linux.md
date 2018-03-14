@@ -71,7 +71,7 @@ $ cp -R
 $ zip dst.zip -yr src
 ```
 
-## OS
+### OS
 ##### version
 ```
 # os
@@ -88,4 +88,12 @@ cat /etc/system-release
 
 # alipine
 cat /etc/alpine-release 
+```
+
+### pkg
+##### alipineのedgeブランチ追加
+```bash
+echo http://dl-cdn.alpinelinux.org/alpine/edge/main/ >> /etc/apk/repositories
+echo http://dl-cdn.alpinelinux.org/alpine/edge/community/ >> /etc/apk/repositories
+apk update
 ```
