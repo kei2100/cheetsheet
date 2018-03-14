@@ -34,6 +34,11 @@ $ nc -l <port>
 $ nc -lu <port>
 ```
 
+##### DNS txtレコードの確認
+```bash
+$ nslookup -q=txt <domain_name>
+```
+
 ##### tcpdump
 ```bash
 # ASCII表示でループバックアドレス:８０への通信をダンプ
