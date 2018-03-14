@@ -55,7 +55,7 @@ $ mkdir foo && cd $_
 
 ##### scriptのディレクトリ取得
 ```bash
-CURDIR=$(cd $(dirname $1) && pwd)
+CURDIR=$(cd $(dirname $0) && pwd)
 ```
 
 ##### symlinkの実体に移動
