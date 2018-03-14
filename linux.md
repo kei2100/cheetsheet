@@ -48,10 +48,14 @@ $ cd -
 ```
 
 ##### mkdirした先に移動
-
 ```bash
 $ mkdir foo && cd $_
 # $_ means the last argument to the previous command.
+```
+
+##### scriptのディレクトリ取得
+```bash
+CURDIR=$(cd $(dirname $1) && pwd)
 ```
 
 ##### symlinkの実体に移動
