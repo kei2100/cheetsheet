@@ -3,6 +3,16 @@
 ```bash
 bash$ diff <(cat txt1) <(cat txt2) 
 ```
+##### echo改行表示
+```bash
+$ echo -e '\na'
+
+a
+-- 
+$ echo $'\n'a
+
+a
+```
 
 ### process
 ##### プロセスの環境変数
@@ -34,7 +44,8 @@ $ nc -l <port>
 $ nc -lu <port>
 ```
 
-##### DNS txtレコードの確認
+#### DNS 
+##### txtレコードの確認
 ```bash
 $ nslookup -q=txt <domain_name>
 ```
