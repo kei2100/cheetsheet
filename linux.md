@@ -113,3 +113,9 @@ echo http://dl-cdn.alpinelinux.org/alpine/edge/main/ >> /etc/apk/repositories
 echo http://dl-cdn.alpinelinux.org/alpine/edge/community/ >> /etc/apk/repositories
 apk update
 ```
+
+### tls
+##### 証明書pemの情報表示
+```bash
+$  openssl x509 -in etc/letsencrypt/live/hoge.hoge/cert.pem -text
+```
