@@ -57,6 +57,16 @@ $ tcpdump -A -i lo0 port 80
 
 ```
 
+#### ss
+##### TCP・UDPソケットの確認ｍ
+```bash
+# netstat -tan (--tcp --all --numeric)
+$ ss -tan
+
+# netstat -uan (--udp --all --numeric)
+$ ss -uan
+```
+
 ### navigate
 ##### 前のディレクトリに戻る
 ```bash
