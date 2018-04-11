@@ -126,5 +126,10 @@ echo http://dl-cdn.alpinelinux.org/alpine/edge/community/ >> /etc/apk/repositori
 ### tls
 ##### 証明書pemの情報表示
 ```bash
-$  openssl x509 -in etc/letsencrypt/live/hoge.hoge/cert.pem -text
+$  openssl x509 -in etc/letsencrypt/live/hoge.hoge/cert.pem -text -noout
+```
+
+###### CSRpemの情報表示
+```bash
+$  openssl req -in ./csr.pem -text -noout
 ```
