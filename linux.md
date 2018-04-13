@@ -14,6 +14,11 @@ $ echo $'\n'a
 a
 ```
 
+##### echo改行無し
+```bash
+echo -n 'aaa'
+```
+
 ### process
 ##### プロセスの環境変数
 ```bash
