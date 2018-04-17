@@ -149,3 +149,22 @@ openssl req -in ./csr.pem -text -noout
 ```bash
  openssl crl -in ./crl.pem -text -noout 
 ```
+
+### daemon
+#### 起動
+```bash
+# systemd
+sudo systemctl start docker
+
+# other
+sudo service docker start
+```
+
+#### 自動起動設定
+```bash
+# systemd
+sudo systemctl enable docker
+
+# other
+sudo chkconfig docker on
+```
