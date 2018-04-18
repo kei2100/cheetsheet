@@ -3,6 +3,8 @@
 ```bash
 bash$ diff <(cat txt1) <(cat txt2) 
 ```
+
+### io
 ##### echo改行表示
 ```bash
 $ echo -e '\na'
@@ -17,6 +19,14 @@ a
 ##### echo改行無し
 ```bash
 echo -n 'aaa'
+```
+
+##### cat ヒアドキュメント リダイレクト
+```
+cat << EOF > doc.txt
+  abc
+  def
+EOF
 ```
 
 ### process
