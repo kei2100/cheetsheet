@@ -4,6 +4,12 @@
 bash$ diff <(cat txt1) <(cat txt2) 
 ```
 
+##### Decimal to Hex
+```bash
+$ printf '%x\n' 909915735
+363c3657
+```
+
 ### io
 ##### echo改行表示
 ```bash
