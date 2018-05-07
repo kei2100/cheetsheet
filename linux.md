@@ -150,6 +150,12 @@ echo http://dl-cdn.alpinelinux.org/alpine/edge/main/ >> /etc/apk/repositories
 echo http://dl-cdn.alpinelinux.org/alpine/edge/community/ >> /etc/apk/repositories
 ```
 
+##### インストール済みpkg一覧
+```bash
+# alpine
+apk info
+```
+
 ### tls
 ##### 証明書pemの情報表示
 ```bash
