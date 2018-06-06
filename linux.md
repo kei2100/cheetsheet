@@ -46,6 +46,15 @@ $ cat /proc/<pid>/environ | strings
 $ ps -o user,group,pid,ppid,c,start_time,tty,time,comm
 ```
 
+##### プロセス起動時刻
+```bash
+$ ps -eo lstart,pid,args
+```
+
+- lstart	コマンドが実行された日時
+- pid	プロセスID
+- args	コマンドと引数
+
 ### network
 ##### 疎通確認
 ```bash
