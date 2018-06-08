@@ -6,3 +6,8 @@
 |superuser_reserved_connections|管理用接続数。max_connectionsからこれを引いた値が利用可能な接続数|
 
 
+## 文字コードの確認
+
+`=> \encoding`
+あるいは
+`$ psql -l`
