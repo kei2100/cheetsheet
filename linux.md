@@ -152,6 +152,15 @@ cat /etc/system-release
 cat /etc/alpine-release 
 ```
 
+##### envdirでaccess denied
+
+```
+# sudo -u postgres envdir /etc/wal-e.d/env whoami
+envdir: fatal: unable to switch to current directory: access denied
+
+メッセージ通りだがカレントディレクトリにpostgresユーザーでアクセスできない場合、このようなエラーになるので注意
+```
+
 ### pkg
 ##### alipineのedgeブランチ追加
 ```bash
