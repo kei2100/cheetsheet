@@ -208,3 +208,9 @@ sudo systemctl enable docker
 # other
 sudo chkconfig docker on
 ```
+
+### time
+##### YYYYMMDDHHMISS
+```bash
+date '+%Y%m%d%H%M%S'
+```
