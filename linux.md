@@ -214,3 +214,18 @@ sudo chkconfig docker on
 ```bash
 date '+%Y%m%d%H%M%S'
 ```
+
+##### iso8601
+```bash
+$ date --iso-8601
+2018-06-12
+
+$ date --iso-8601=hours
+2018-06-12T15+09:00
+
+$ date --iso-8601=minutes
+2018-06-12T15:56+09:00
+
+$ date --iso-8601=seconds
+2018-06-12T15:56:32+09:00
+```
