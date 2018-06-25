@@ -229,3 +229,14 @@ $ date --iso-8601=minutes
 $ date --iso-8601=seconds
 2018-06-12T15:56:32+09:00
 ```
+
+### tty
+##### terminalの入力がおかしくなったとき
+
+- 入力文字が表示されない
+- returnで改行されない
+
+
+```
+stty sane
+```
