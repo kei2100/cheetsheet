@@ -74,6 +74,9 @@ $ nc -l <port>
 $ nc -lu <port>
 ```
 
+#### 帯域モニタリングツール
+iptraf
+
 #### DNS 
 ##### txtレコードの確認
 ```bash
