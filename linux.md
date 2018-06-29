@@ -76,6 +76,7 @@ $ nc -lu <port>
 
 #### 帯域モニタリングツール
 iptraf
+nethogs
 
 #### DNS 
 ##### txtレコードの確認
