@@ -194,6 +194,14 @@ openssl req -in ./csr.pem -text -noout
  openssl crl -in ./crl.pem -text -noout 
 ```
 
+##### サイトのTLSバージョン確認
+
+```
+openssl s_client -connect api.stripe.com:443 -tls1 < /dev/null
+openssl s_client -connect api.stripe.com:443 -tls1_1 < /dev/null
+openssl s_client -connect api.stripe.com:443 -tls1_2 < /dev/null
+```
+
 ### daemon
 #### 起動
 ```bash
