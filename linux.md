@@ -204,6 +204,11 @@ openssl req -in ./csr.pem -text -noout
  openssl crl -in ./crl.pem -text -noout 
 ```
 
+##### DER binary 2 PEM text
+```
+openssl x509 -in key.cer -out key.pem -inform DER -outform PEM
+```
+
 ##### サイトのTLSバージョン確認
 
 ```
