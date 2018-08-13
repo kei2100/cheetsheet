@@ -2,6 +2,12 @@
 
 `.git/info/exclude`に書き込む
 
+```
+/.idea/
+/.envrc
+/*.iml
+.DS_Store
+```
 
 ## merge commitのrevert
 
