@@ -23,3 +23,9 @@ Merge: 0e2695a47 2082dfba2
 git revert 0e2695a47 -m 1
 のようにする
 ```
+
+## gitignoreで特定の拡張子だけ管理に含みたい
+```
+/example/*
+!/example/*.go  # これは含む
+```
