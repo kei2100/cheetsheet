@@ -204,7 +204,12 @@ openssl req -in ./csr.pem -text -noout
 
 ##### CRL pemの情報表示
 ```bash
- openssl crl -in ./crl.pem -text -noout 
+openssl crl -in ./crl.pem -text -noout 
+```
+
+##### RSA key pemの情報表示
+```bash
+openssl rsa -in ./key.pem -text -noout 
 ```
 
 ##### DER binary 2 PEM text
