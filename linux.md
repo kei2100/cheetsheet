@@ -189,7 +189,7 @@ apk info
 ```
 
 ### tls
-##### 証明書pemの情報表示
+##### 証明書の情報表示
 ```bash
 openssl x509 -in etc/letsencrypt/live/hoge.hoge/cert.pem -text -noout
 
