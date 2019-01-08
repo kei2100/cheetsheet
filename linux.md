@@ -195,6 +195,9 @@ openssl x509 -in etc/letsencrypt/live/hoge.hoge/cert.pem -text -noout
 
 # from web site
 openssl s_client -connect example.com:443 < /dev/null 2> /dev/null | openssl x509 -noout -text
+
+# 証明書チェーンの内容表示ワンライナー
+openssl crl2pkcs7 -nocrl -certfile <(cat cert1.pem cert2.pem) | openssl pkcs7 -print_certs -noout
 ```
 
 ##### CSR pemの情報表示
