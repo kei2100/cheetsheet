@@ -30,3 +30,10 @@ done
 
 echo "${OBJECTS}" | jq -r '.Contents | .[-1].Key'
 ```
+
+## ECR
+#### ログインワンライナー
+using: awscli
+```bash
+aws ecr get-login --region=ap-northeast-1 --no-include-email | sh
+```
