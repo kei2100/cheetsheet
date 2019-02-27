@@ -20,6 +20,17 @@ a                    1234
 xyz                999999
 ```
 
+##### 出力を縦に
+```
+$ echo foobar | grep -o .
+f
+o
+o
+b
+a
+r
+```
+
 ### io
 ##### echo改行表示
 ```bash
