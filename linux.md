@@ -31,6 +31,12 @@ a
 r
 ```
 
+##### エンコーディング変換
+iconv
+```
+cat foo.csv | iconv -f SHIFT_JIS -t UTF-8
+```
+
 ### io
 ##### echo改行表示
 ```bash
