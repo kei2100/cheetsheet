@@ -21,3 +21,10 @@ block in on lo0 proto tcp from self port xxxxx to self port yyyyy
 ### Finder
 ##### 隠しファイル表示
 `cmd + shift + .`
+
+### OS
+##### 登録URLスキーム一覧
+
+```
+/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -dump | egrep "bindings.+:" | sort
+```
