@@ -28,3 +28,6 @@ block in on lo0 proto tcp from self port xxxxx to self port yyyyy
 ```
 /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -dump | egrep "bindings.+:" | sort
 ```
+
+##### アプリケーション強制終了
+`cmd + option + esc`
