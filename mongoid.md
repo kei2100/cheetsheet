@@ -2,7 +2,7 @@
 
 ```ruby
 Rails.application.eager_load!
-db = Clinic.collection.database
+db = MyModel.collection.database
 Mongoid.models.
   reject { |m| m.embedded? }.
   map { |m|
