@@ -110,8 +110,14 @@ nethogs
 ```bash
 $ nslookup -q=txt <domain_name>
 ```
+##### dig
+```bash
+# ANSWERセクションだけ表示
+dig hoo.com +noall +answer
 
-##### tcpdump
+```
+
+#### tcpdump
 ```bash
 # ASCII表示でループバックアドレス:８０への通信をダンプ
 $ tcpdump -A -i lo0 port 80 
