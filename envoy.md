@@ -41,3 +41,12 @@ Envoyは一つのプロセスで複数のListenerを持つことができる（�
 
 Listenerは「listener discovery service (LDS)」により動的設定することができる。
 
+## HTTP
+HTTPはモダンなサービス志向アプリケーションにおいて非常に重要なコンポーネントであり、Envoyでも多数の機能をサポートしている。
+
+### HTTP Protocols
+1.1, WebSocket, 2をサポート
+
+### HTTP header sanitizing
+
+### TODO
