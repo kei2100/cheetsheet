@@ -48,5 +48,25 @@ HTTPはモダンなサービス志向アプリケーションにおいて非常�
 1.1, WebSocket, 2をサポート
 
 ### HTTP header sanitizing
+セキュリティ的な理由により、EnvoyプロキシはいくつかのHTTPヘッダをサニタイズしたり、追加や転送といった処理を行う。
 
-### TODO
+#### e.g. x-request-id
+Envoyプロキシは全ての外部オリジンのリクエストに対し、`x-request-id` ヘッダを付与する。オリジナルのリクエストに値が存在していた場合、サニタイズされる。
+
+#### e.g. x-forwarded-for
+`use_remote_addressオプション`がtrueで、`skip_xff_appendオプション`がfalseの場合、EnvoyプロキシはXFFヘッダに最も近いクライアントのリモートIPを付与する。
+
+### Route table configuration
+VirtualHostベースのルーティングや、パスのリライト、重み付けによる分散など様々なリクエストのルーティングを行うことができる。
+静的な設定の他に、「Route discovery service （RDS）」による動的設定が可能。
+
+### Internal redirects
+Envoyプロキシは、Upstreamサーバーから返却された３０２レスポンスをキャプチャし、ルートにマッチする新しいアップストリームに送信し、レスポンスを元のリクエストへのレスポンスとすることができる。
+
+### Timeouts
+様々なタイムアウトを管理
+
+## Upstream clusters
+
+#### TODO
+
