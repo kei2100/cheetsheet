@@ -67,6 +67,13 @@ Envoyプロキシは、Upstreamサーバーから返却された３０２レス�
 様々なタイムアウトを管理
 
 ## Upstream clusters
+### Cluster manager
+Cluster managerはUpstreamのClusterの構成情報を管理する。
+構成情報の登録は静的な設定の他に、「Cluster discovery service (CDS)」による動的な設定が可能。
+
+### Cluster warming
+Clusterの初期化時、warmingが行われる。
+サービス検出され、ヘルスチェックが設定されている場合は、それに合格するまで、Envoy Proxyからは存在しないものとして扱われる。（HTTPルートを設定している場合、404や503になる）。Cluster更新時は、新しいClusterがウォームアップされるまで、古いClusterにトラフィックが送信される。ウォームアップが完了すると、トラフィックが切断しないよう、アトミックにClusterが交換される。
 
 #### TODO
 
