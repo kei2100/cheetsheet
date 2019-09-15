@@ -71,9 +71,81 @@ Envoyプロキシは、Upstreamサーバーから返却された３０２レス�
 Cluster managerはUpstreamのClusterの構成情報を管理する。
 構成情報の登録は静的な設定の他に、「Cluster discovery service (CDS)」による動的な設定が可能。
 
-### Cluster warming
+#### Cluster warming
 Clusterの初期化時、warmingが行われる。
 サービス検出され、ヘルスチェックが設定されている場合は、それに合格するまで、Envoy Proxyからは存在しないものとして扱われる。（HTTPルートを設定している場合、404や503になる）。Cluster更新時は、新しいClusterがウォームアップされるまで、古いClusterにトラフィックが送信される。ウォームアップが完了すると、トラフィックが切断しないよう、アトミックにClusterが交換される。
 
+### Service discovery
+
+### Health checking
+
+### Connection pooling
+
+### Load Balancing
+
+### Outlier detection
+異常値の検出と削除
+
+### Circuit breaking
+
+### Upstream network filters
+
+## Observability
+### Statistics
+
+### Access logging
+
+### Tracing
+
+## Security
+### TLS
+
+### JWT Authentication
+
+### External Authorization
+
+### Role Based Access Control
+
+## Operations & Configuration
+### Dynamic configuration
+
+### Initialization
+
+### Draining
+
+### Runtime configuration
+
+### Hot restart
+
+### Overload manager
+オーバーロードマネージャーは、大量のクライアント接続やリクエスト過多によるシステムリソースの枯渇から（メモリ、CPU、ファイル記述子など）、Envoyサーバーを保護するための拡張可能なコンポーネント。
+
+## Other features
+### Global rate limiting
+
+### Scripting
+
+### IP Transparency
+#### HTTP Headers
+
+#### Proxy Protocol
+
+#### Original Source Listener Filter
+
+#### Original Source HTTP Filter
+
+## Other protocols
+### gRPC
+
+### MongoDB
+
+### DynamoDB
+
+### Redis
+
+## Advanced
+### Sharing data between filters
+
+# Deployment types
 #### TODO
 
