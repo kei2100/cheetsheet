@@ -152,8 +152,82 @@ Clusterの初期化時、warmingが行われる。
 # Getting Started
 
 ```bash
-docker pull envoyproxy/envoy-alpine
-docker run --rm -d -p 10000:10000 envoyproxy/envoy-alpine:latest
+$ docker pull envoyproxy/envoy-alpine
+$ docker run --rm -d -p 10000:10000 envoyproxy/envoy-alpine:latest
 ```
 
 で、デフォルトだと*.google.comへのプロキシとして起動する。
+このときの設定は以下の通り
+
+```yml
+$ docker exec -it 246f9a537172 cat /etc/envoy/envoy.yaml
+admin:
+  access_log_path: /tmp/admin_access.log
+  address:
+    socket_address:
+      protocol: TCP
+      address: 127.0.0.1
+      port_value: 9901
+static_resources:
+  listeners:
+  - name: listener_0
+    address:
+      socket_address:
+        protocol: TCP
+        address: 0.0.0.0
+        port_value: 10000
+    filter_chains:
+    - filters:
+      - name: envoy.http_connection_manager
+        typed_config:
+          "@type": type.googleapis.com/envoy.config.filter.network.http_connection_manager.v2.HttpConnectionManager
+          stat_prefix: ingress_http
+          route_config:
+            name: local_route
+            virtual_hosts:
+            - name: local_service
+              domains: ["*"]
+              routes:
+              - match:
+                  prefix: "/"
+                route:
+                  host_rewrite: www.google.com
+                  cluster: service_google
+          http_filters:
+          - name: envoy.router
+  clusters:
+  - name: service_google
+    connect_timeout: 0.25s
+    type: LOGICAL_DNS
+    # Comment out the following line to test on v6 networks
+    dns_lookup_family: V4_ONLY
+    lb_policy: ROUND_ROBIN
+    load_assignment:
+      cluster_name: service_google
+      endpoints:
+      - lb_endpoints:
+        - endpoint:
+            address:
+              socket_address:
+                address: www.google.com
+                port_value: 443
+    tls_context:
+      sni: www.google.com
+```
+
+adminを以下に変更して、localhost:9901にアクセスすると管理画面を参照できる
+
+```yml
+admin:
+  access_log_path: /tmp/admin_access.log
+  address:
+    socket_address:
+      protocol: TCP
+      #address: 127.0.0.1
+      address: 0.0.0.0
+      port_value: 9901
+```
+
+```bash
+$ docker run --rm -p 10000:10000 -p 9901:9901 -v $(pwd):/etc/envoy envoyproxy/envoy-alpine:latest
+```
