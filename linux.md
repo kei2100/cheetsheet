@@ -43,6 +43,11 @@ iconv
 cat foo.csv | iconv -f SHIFT_JIS -t UTF-8
 ```
 
+##### awkでX区切りの最後の要素を出力
+```例えばfindしてファイル名のみ出力
+$ find ./proto/* -name '*.proto' | awk -F '/' '{print $NF}'
+```
+
 ### io
 ##### echo改行表示
 ```bash
