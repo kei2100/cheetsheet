@@ -146,7 +146,14 @@ Clusterの初期化時、warmingが行われる。
 ### Sharing data between filters
 
 # Deployment types
-#### TODO
+## Service to service
+![image](https://user-images.githubusercontent.com/1415655/66081964-1d457800-e5a4-11e9-9de1-78a6039f777a.png)
+
+## Front proxy
+![image](https://user-images.githubusercontent.com/1415655/66081988-26cee000-e5a4-11e9-88c1-72b2b63fc064.png)
+
+## Double proxy
+![image](https://user-images.githubusercontent.com/1415655/66082018-32220b80-e5a4-11e9-9045-775099e60890.png)
 
 
 # Getting Started
