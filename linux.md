@@ -222,6 +222,12 @@ echo http://dl-cdn.alpinelinux.org/alpine/edge/community/ >> /etc/apk/repositori
 apk info
 ```
 
+##### pkgがインストールするファイル一覧
+```bash
+# alipne
+apk info -L <package>
+```
+
 ### tls
 ##### 証明書の情報表示
 ```bash
