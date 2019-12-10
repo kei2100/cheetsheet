@@ -318,3 +318,15 @@ $ date --iso-8601=seconds
 ```
 stty sane
 ```
+
+### http
+##### JSONをパイプしてPOST
+
+```bash
+$ echo '
+{
+  "insurance_card": {
+    "id": "2a7798f7-37c6-40e0-86e6-c63db5859002"
+  }
+}' | curl -XPOST https://example.com/insurance_cards -d @-
+```
