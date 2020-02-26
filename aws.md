@@ -37,3 +37,9 @@ using: awscli
 ```bash
 aws ecr get-login --region=ap-northeast-1 --no-include-email | sh
 ```
+
+## AWS Account
+#### アカウント番号取得
+```bash
+aws sts get-caller-identity --output=text --query='Account'
+```
