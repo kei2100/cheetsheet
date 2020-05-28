@@ -35,7 +35,11 @@ echo "${OBJECTS}" | jq -r '.Contents | .[-1].Key'
 #### ログインワンライナー
 using: awscli
 ```bash
+# deprecated
 aws ecr get-login --region=ap-northeast-1 --no-include-email | sh
+
+# recommended
+aws ecr get-login-password | docker login --username AWS --password-stdin https://${AWS_ACCOUNT}.dkr.ecr.ap-northeast-1.amazonaws.com
 ```
 
 ## AWS Account
