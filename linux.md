@@ -262,7 +262,7 @@ openssl x509 -in cert.der -out cert.pem -inform DER -outform PEM
 
 ##### p12(pfx) to pem
 ```
-openssl pkcs12 -in client.pfx -nokeys -out cert.pem
+openssl pkcs12 -in client.pfx -clcerts -nokeys -out cert.pem  # クライアント証明書
 openssl pkcs12 -in client.pfx -nocerts -nodes -out key.pem
 ```
 
