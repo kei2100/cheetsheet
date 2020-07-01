@@ -260,6 +260,12 @@ openssl rsa -in ./key.pem -text -noout
 openssl x509 -in cert.der -out cert.pem -inform DER -outform PEM
 ```
 
+##### p12(pfx) to pem
+```
+openssl pkcs12 -in client.pfx -nokeys -out cert.pem
+openssl pkcs12 -in client.pfx -nocerts -nodes -out key.pem
+```
+
 ##### サイトのTLSバージョン確認
 
 ```
