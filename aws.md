@@ -1,3 +1,47 @@
+## AZ
+### ゾーン ID の取得
+
+```bash
+$ aws ec2 describe-availability-zones --region ap-northeast-1
+{
+    "AvailabilityZones": [
+        {
+            "State": "available",
+            "OptInStatus": "opt-in-not-required",
+            "Messages": [],
+            "RegionName": "ap-northeast-1",
+            "ZoneName": "ap-northeast-1a",
+            "ZoneId": "apne1-az4",
+            "GroupName": "ap-northeast-1",
+            "NetworkBorderGroup": "ap-northeast-1",
+            "ZoneType": "availability-zone"
+        },
+        {
+            "State": "available",
+            "OptInStatus": "opt-in-not-required",
+            "Messages": [],
+            "RegionName": "ap-northeast-1",
+            "ZoneName": "ap-northeast-1c",
+            "ZoneId": "apne1-az1",
+            "GroupName": "ap-northeast-1",
+            "NetworkBorderGroup": "ap-northeast-1",
+            "ZoneType": "availability-zone"
+        },
+        {
+            "State": "available",
+            "OptInStatus": "opt-in-not-required",
+            "Messages": [],
+            "RegionName": "ap-northeast-1",
+            "ZoneName": "ap-northeast-1d",
+            "ZoneId": "apne1-az2",
+            "GroupName": "ap-northeast-1",
+            "NetworkBorderGroup": "ap-northeast-1",
+            "ZoneType": "availability-zone"
+        }
+    ]
+}
+```
+
 ## S3
 #### ページングして最後のオブジェクトを表示
 using: awscli, jq
