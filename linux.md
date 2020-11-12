@@ -48,6 +48,13 @@ cat foo.csv | iconv -f SHIFT_JIS -t UTF-8
 $ find ./proto/* -name '*.proto' | awk -F '/' '{print $NF}'
 ```
 
+##### 文字列をデリミタで分割
+
+```
+# , delimiter
+$ for i in $(echo "foo,bar,buz" | tr "," "\n"); do echo $i; done
+```
+
 ### io
 ##### echo改行表示
 ```bash
