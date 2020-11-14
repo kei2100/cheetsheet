@@ -55,6 +55,29 @@ $ find ./proto/* -name '*.proto' | awk -F '/' '{print $NF}'
 $ for i in $(echo "foo,bar,buz" | tr "," "\n"); do echo $i; done
 ```
 
+##### 指定行に挿入
+
+```bash
+# macOS の場合は gsed (gnu-sed) で 
+$ cat text 
+a
+b
+c
+
+$ cat text | gsed '2ifoo'
+a
+foo
+b
+c
+
+# 末尾に挿入
+$ cat text | gsed '$ a bar'
+a
+b
+c
+bar
+```
+
 ### io
 ##### echo改行表示
 ```bash
