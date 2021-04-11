@@ -263,6 +263,25 @@ SELECT * FROM emp WHERE empno BETWEEN 7782 AND 7788 AND ename LIKE '%t' FOR UPDA
           L-------L-------L
 ```
 
+### プライマリインデックスに対する等価検索 => 空振り
+
+```sql
+SELECT * FROM emp WHERE empno = 7785 FOR UPDATE
+```
+
+以下のロックを取得する。
+空振りするとレコードロックではなくギャップロックとなり、ロックする範囲が広くなることに注意する。
+
+* 7782 と 7788 の間のギャップロック
+
+```
+(empno)
+
+7698   7782  7788  7839
+  |-----|-----|-----| 
+         L---L
+```
+
 ### プライマリインデックスに対する範囲検索 => 空振り
 
 ```sql
@@ -444,11 +463,54 @@ SELECT * FROM emp WHERE empno BETWEEN 7784 AND 7786 FOR UPDATE
 
 ## デッドロックするクエリの例
 
-ここから TODO
+### 空振りするDELETE => INSERT
 
-空振りの DELETE INSERT 
-回避策
+DELETE => INSERT するような処理で、DELETE が空振りする可能性がある場合、タイミングによりデッドロックが発生することがある。
 
-### appendix
-INSERT は記述した順に
-IN 句は
+```sql
+TX1: REPEATABLE_READ
+TX2: REPEATABLE_READ
+
+TX1: DELETE FROM emp WHERE empno = 7784
+TX2: DELETE FROM emp WHERE empno = 7786
+
+TX1: INSERT INTO emp (empno, ename) VALUES (7784, 'steve')
+TX2: INSERT INTO emp (empno, ename) VALUES (7786, 'bill')
+```
+
+最初の TX1 と TX2 による DELETE 文は空振りとなるため、以下のギャップロックを取得する。ギャップロック同士は競合しないことに注意。
+
+```
+(empno)
+
+7698   7782  7788  7839
+  |-----|-----|-----| 
+TX1      L---L
+TX2      L---L
+```
+
+次の TX1 による INSERT 文でインテンションギャップロックを取得しようとするが、TX2 が保持するギャップロックと競合するため待たされる。その後 TX2 が INSERT 文でインテンションギャップロックを取得しようとするが、TX1 が保持するするギャップロックと競合するため待たされデッドロックとなる。
+
+```
+(empno)
+
+7698   7782  7788  7839
+  |-----|-----|-----| 
+TX1      L---L
+TX2      L---L
+TX1     (L---L) TX2 待ち
+TX2     (L---L) TX1 待ち => デッドロック
+```
+
+回避策としては、DELETE の前に SELECT して、存在しているならば削除するというようにすれば、空振りによるギャップロック取得を防止することができ、デッドロックを回避できる。（SELECT はロックではなく MVCC のため、ロックと競合しない）
+
+## appendix
+
+### InnoDB ロックモニタ
+
+InnoDB ロックモニタを有効にすると、`SHOW ENGINE INNODB STATUS` でトランザクションが保持しているロック情報を参照できる。
+
+```sql
+SET GLOBAL innodb_status_output_locks = ON
+SHOW ENGINE INNODB STATUS
+```
