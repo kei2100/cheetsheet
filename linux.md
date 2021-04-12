@@ -37,10 +37,15 @@ $ cat foo.txt | cut -c 1,80
 ```
 
 
-##### エンコーディング変換
+##### 文字コード変換
 iconv
 ```
 cat foo.csv | iconv -f SHIFT_JIS -t UTF-8
+```
+
+nkf
+```
+cat foo.csv | nkf -S
 ```
 
 ##### awkでX区切りの最後の要素を出力
@@ -76,6 +81,12 @@ a
 b
 c
 bar
+```
+
+##### base64
+
+```bash
+$ echo '<base64 str>' | base6 -d
 ```
 
 ### io
