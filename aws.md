@@ -91,3 +91,13 @@ aws ecr get-login-password | docker login --username AWS --password-stdin https:
 ```bash
 aws sts get-caller-identity --output=text --query='Account'
 ```
+
+## LocalStack
+#### Endpoint 指定
+
+awscli で LocalStack にアクセスするときは Endpoint 指定が必要な場合がある
+
+```bash
+# localhost:4566 で localstack sqs がリスンしているとして
+aws --endpoint-url=http://localhost:4566 sqs get-queue-attributes --queue-url=http://localhost:4566/queue/my-queue
+```
