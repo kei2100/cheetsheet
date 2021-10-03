@@ -1,4 +1,10 @@
+# Ruby
+## gem のインストールパス
+```
+$ gem which rails
+```
 
+# Rails
 ## models
 ### validatorの内容確認
 
