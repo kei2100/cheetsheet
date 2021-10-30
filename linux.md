@@ -308,6 +308,13 @@ openssl pkcs12 -in client.pfx -clcerts -nokeys -out cert.pem  # クライアン�
 openssl pkcs12 -in client.pfx -nocerts -nodes -out key.pem
 ```
 
+##### private key から public key を生成
+
+```
+# PKCS#8 形式の ec (elliptic curve) 秘密鍵ファイルから公開鍵を生成
+openssl ec -in private.p8 -pubout -out public.p8
+```
+
 ##### サイトのTLSバージョン確認
 
 ```
