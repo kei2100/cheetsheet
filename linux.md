@@ -374,6 +374,12 @@ $ date --iso-8601=seconds
 stty sane
 ```
 
+##### terminal へのペーストで「0~hoge~1」のように 0~ ~1 で対象が囲まれてしまうとき
+
+```
+printf "\e[?2004l"
+```
+
 ### http
 ##### JSONをパイプしてPOST
 
