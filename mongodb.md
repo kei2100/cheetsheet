@@ -15,3 +15,9 @@ db.setProfilingLevel(0, { slowms: 100 })
 db.system.profile.find().limit(10).sort( { ts : -1 } ).pretty()  // over 100ms なコマンドがsystem.profileコレクションに記録される（capped collection）
 ```
 
+### query
+
+```javascript
+// 文字列の長さ n 以上で検索
+{ "tel": { "$ne": null }, "$expr": { "$gt": [ { "$strLenCP": "$tel" }, 11 ] } }
+```
