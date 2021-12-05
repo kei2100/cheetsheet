@@ -366,12 +366,15 @@ $ date --iso-8601=seconds
 ### tty
 ##### terminalの入力がおかしくなったとき
 
-- 入力文字が表示されない
-- returnで改行されない
 
 
-```
-stty sane
+```bash
+# 入力文字が表示されない
+# returnで改行されない
+$ stty sane
+
+# cursor が表示されない
+$ reset
 ```
 
 ##### terminal へのペーストで「0~hoge~1」のように 0~ ~1 で対象が囲まれてしまうとき
