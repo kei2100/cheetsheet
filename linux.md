@@ -383,6 +383,19 @@ $ reset
 printf "\e[?2004l"
 ```
 
+##### exec で標準出力をファイルにリダイレクト
+
+```
+$ exec > output
+
+# コマンドの結果は output に出力される
+$ ls -l
+
+# 出力をターミナルに戻す
+$ exec > /dev/tty
+```
+
+
 ### http
 ##### JSONをパイプしてPOST
 
