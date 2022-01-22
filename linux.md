@@ -63,7 +63,8 @@ $ for i in $(echo "foo,bar,buz" | tr "," "\n"); do echo $i; done
 ##### 指定行に挿入
 
 ```bash
-# macOS の場合は gsed (gnu-sed) で 
+# mac
+の場合は gsed (gnu-sed) で 
 $ cat text 
 a
 b
@@ -239,6 +240,11 @@ cat /etc/system-release
 
 # alipine
 cat /etc/alpine-release 
+```
+
+##### プロセスが読み込んでいる環境変数表示
+```
+strings /proc/[PID]/environ
 ```
 
 ##### envdirでaccess denied
