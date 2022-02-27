@@ -5,4 +5,7 @@ sequenceDiagram
 
   Alice ->> Bob: Hello!
   Bob -->> Alice: Hi!
+  
+  Alice ->> Bob: こんにちは!
+  Bob -->> Alice: どうも!  
 ```  
