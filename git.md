@@ -29,3 +29,9 @@ git revert 0e2695a47 -m 1
 /example/*
 !/example/*.go  # これは含む
 ```
+
+## 特定のファイルだけ revert したい
+
+```
+git checkout {戻したい位置の commit hash} {ファイルパス}
+```
