@@ -1,4 +1,4 @@
-##　ワンライナー Web サーバー
+## ワンライナー Web サーバー
 
 ```
 $ python -m SimpleHTTPServer 8000
