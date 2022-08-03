@@ -2,7 +2,7 @@ go バイナリの go get
 ==
 
 ```bash
-$ go install golang.org/dl/go1.17
+$ go install golang.org/dl/go1.17@latest
 
 # goX.XX コマンドがインストールされる
 
