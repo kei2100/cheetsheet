@@ -101,3 +101,10 @@ awscli で LocalStack にアクセスするときは Endpoint 指定が必要な
 # localhost:4566 で localstack sqs がリスンしているとして
 aws --endpoint-url=http://localhost:4566 sqs get-queue-attributes --queue-url=http://localhost:4566/queue/my-queue
 ```
+
+## Amazon Linux
+#### バージョン確認
+```
+$ cat /etc/system-release
+$ cat /etc/os-release
+```
