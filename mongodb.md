@@ -37,3 +37,9 @@ db.getCollectionNames().map(function(col) {
     return obj;
 });
 ```
+
+### WiredTiger のキャッシュサイズ
+
+```
+db.serverStatus().wiredTiger.cache["maximum bytes configured"]
+```
