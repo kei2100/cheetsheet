@@ -1,4 +1,4 @@
-##### ranking of collection size
+### ranking of collection size
 
 ```ruby
 Rails.application.eager_load!
@@ -19,4 +19,11 @@ Mongoid.models.
   map { |st| st.merge! total: (st[:total] / 1024 / 1024 /1024).round(2).to_s + 'GB' }.
   first(20).
   each { |st| p st }; nil
+```
+
+### ドキュメントフィールドサイズの適当な計算
+
+```
+d, attrs = ExampleModel.first, ExampleModel.attribute_names
+attrs.reduce(0) { |sum, a| puts "#{a}: #{d.send(a).to_s.bytesize}"; sum + d.send(a).to_s.bytesize }
 ```
