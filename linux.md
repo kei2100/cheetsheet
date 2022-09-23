@@ -4,6 +4,11 @@
 bash$ diff <(cat txt1) <(cat txt2) 
 ```
 
+##### json diff
+```bash
+$ diff <(jq --sort-keys . 1_1.json) <(jq --sort-keys . 1_2.json)
+```
+
 ##### Decimal to Hex
 ```bash
 $ printf '%x\n' 909915735
