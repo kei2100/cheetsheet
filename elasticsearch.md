@@ -1,3 +1,22 @@
+### API
+##### すべてのindexからaliasを列挙
+```
+curl http://localhost:9200/_aliases/
+```
+
+##### index を列挙
+
+```
+curl localhost:9200/_cat/indices?v
+```
+
+
+##### index削除
+```
+curl -XDELETE http://localhost:9200/{indexname}
+```
+
+
 ### concepts
 - NRT (Near Realtime
   - ほぼリアルタイム。検索可能になるまでにわずかな待ち時間（通常は1秒）はある。
@@ -42,14 +61,3 @@
 - 一つのシャードは、一つのLuceneindex。シャードにおけるドキュメント数の上限は2,147,483,519（= Integer.MAX_VALUE - 128）
 - cat-shards APIを使用してシャードのサイズを監視できます
   
-
-### API
-##### すべてのindexからaliasを列挙
-```
-curl http://localhost:9200/_aliases/
-```
-
-##### index削除
-```
-curl -XDELETE http://localhost:9200/{indexname}
-```
