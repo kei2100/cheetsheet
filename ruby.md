@@ -22,3 +22,13 @@ ModelClass.validators
 ### routingの確認
 
 rails routesだと毎回Rails環境を読み込んで遅いので、consoleでshow-routesするか、spring rake routesする
+
+# RSpec
+## ジョブエンキューの matcher
+
+```ruby
+expect { subject }.to have_enqueued_job.on_queue(queue_name).with { |job_class, args|
+  expect(job_class).to eq(want_job_class)
+  expect(args).to eq(want_args)
+}
+```
