@@ -95,6 +95,20 @@ bar
 $ echo '<base64 str>' | base6 -d
 ```
 
+##### 文字列置換
+
+```
+# perl
+## 
+perl -pe 's/str/rts/' text
+
+## ファイル置換
+perl -pi -e 's/str/rts/' file
+
+## 各行ではなくファイル全体にマッチ. e.g. 末尾空行を一つ入れる
+perl -0 -pi -e 's/(\r\n|[\n\r\u2028\u2029\u0085])*\z/\n/' 
+```
+
 ### io
 ##### echo改行表示
 ```bash
