@@ -229,7 +229,7 @@ $ cd -P <link>
 ```
 
 ### filesystem
-##### symlink保持して
+##### symlink保持して zip
 ```
 $ cp -R
 
@@ -240,6 +240,12 @@ $ zip dst.zip -yr src
 標準入力でパスを渡すときれいにバイト数だけ取れる
 ```
 wc -c < /path/to/file
+```
+
+##### 指定した時間よりあとに更新されたファイル
+
+```
+$ find ./* -newermt '20221124 10:11:37' 
 ```
 
 ### OS
