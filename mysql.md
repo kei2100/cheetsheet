@@ -11,6 +11,15 @@ CREATE USER admin@'%' IDENTIFIED BY '<password>';
 GRANT ALL ON `<schema>`.* TO admin@'%';
 ```
 
+```sql
+-- 特定のテーブル以外 GRANT
+REVOKE ALL PRIVILEGES ON db.* FROM user@localhost;  
+
+SELECT CONCAT("GRANT UPDATE ON db.", table_name, " TO user@localhost;")
+FROM information_schema.TABLES
+WHERE table_schema = "YourDB" AND table_name <> "table_to_skip";
+```
+
 ## 文字列検索では後続の空白は無視してマッチするの注意
 
 ```sql
