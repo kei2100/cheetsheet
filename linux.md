@@ -438,3 +438,11 @@ $ echo '
   }
 }' | curl -XPOST https://example.com/insurance_cards -d @-
 ```
+
+### QR 
+##### zint
+
+```bash
+# バイナリモードで出力
+zint -b QRCODE --binary -i test.txt
+```
