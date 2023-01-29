@@ -206,6 +206,27 @@ $ ss -tan
 $ ss -uan
 ```
 
+#### ncat で keepalive timeout の確認
+
+```
+$ ncat -vvv --ssl example.com 443
+GET / HTTP/1.1
+Host: example.com
+<Enter>
+
+> HTTP/1.1 200 OK
+> Date: Sun, 29 Jan 2023 07:40:02 GMT
+> Content-Type: text/html; charset=utf-8
+> Content-Length: 0
+> Connection: keep-alive
+> Server: gunicorn/19.9.0
+> Access-Control-Allow-Origin: *
+> Access-Control-Allow-Credentials: true
+
+# keepalive が切れると EOF 受信する
+ibnsock nsock_trace_handler_callback(): Callback: READ EOF for EID 82 [52.1.93.201:443]
+```
+
 ### navigate
 ##### 前のディレクトリに戻る
 ```bash
