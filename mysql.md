@@ -43,3 +43,9 @@ mysql> select "text\ttext" like concat("%", CHAR(9), "%");
 +---------------------------------------------+
 1 row in set (0.00 sec)
 ```
+
+## 接続数
+
+```sql
+mysql> show status like 'Threads_connected';
+```
