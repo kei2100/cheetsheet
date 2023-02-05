@@ -49,3 +49,7 @@ mysql> select "text\ttext" like concat("%", CHAR(9), "%");
 ```sql
 mysql> show status like 'Threads_connected';
 ```
+
+```sql
+mysql> show processlist;
+```
