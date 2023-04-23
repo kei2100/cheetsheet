@@ -460,6 +460,16 @@ $ echo '
 }' | curl -XPOST https://example.com/insurance_cards -d @-
 ```
 
+##### curl `.netrc`
+
+https://everything.curl.dev/usingcurl/netrc#example
+
+```
+machine example.com
+login daniel
+password qwerty
+```
+
 ### QR 
 ##### zint
 
