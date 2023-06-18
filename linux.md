@@ -117,6 +117,12 @@ perl -pi -e 's/str/rts/' file
 perl -0 -pi -e 's/(\r\n|[\n\r\u2028\u2029\u0085])*\z/\n/' 
 ```
 
+##### 大文字小文字変換
+
+```bash
+tr '[:upper:]' '[:lower:]'
+```
+
 ### io
 ##### echo改行表示
 ```bash
