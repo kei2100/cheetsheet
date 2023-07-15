@@ -1,5 +1,4 @@
-go バイナリの go get
-==
+### go バイナリの go get
 
 ```bash
 $ go install golang.org/dl/go1.17@latest
@@ -19,4 +18,11 @@ Success. You may now run 'go1.17'
 
 $ go1.17 version
 go version go1.17 darwin/amd64
+```
+
+### docker image pull ってバイナリビルド
+
+CGO_ENABLED=1 しやすい
+```
+docker run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp golang:1.20.5 env GOOS=linux GOARCH=amd64 CGO_ENABLED=1 go build -ldflags="-s -w" -o bin/app/linux/amd64 ./app
 ```
