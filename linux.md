@@ -100,7 +100,7 @@ bar
 ##### base64
 
 ```bash
-$ echo '<base64 str>' | base6 -d
+$ echo '<base64 str>' | base64 -d
 ```
 
 ##### 文字列置換
