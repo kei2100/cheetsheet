@@ -201,6 +201,11 @@ $ nslookup -q=txt <domain_name>
 # ANSWERセクションだけ表示
 dig hoo.com +noall +answer
 
+# DMARC レコード
+dig _dmarc.example.com txt
+
+# SRV レコード. mongodb+srv://example.com の参照先を見るとしたら.
+dig SRV _mongodb._tcp.example.com
 ```
 
 #### tcpdump
