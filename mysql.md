@@ -53,3 +53,21 @@ mysql> show status like 'Threads_connected';
 ```sql
 mysql> show processlist;
 ```
+
+## テーブルサイズの概算
+
+```sql
+SELECT  
+    table_name, 
+    engine, 
+    table_rows,
+    floor((data_length)/1024/1024) AS data_length_MB,  # 主キー領域を含むテーブルサイズ
+    floor((index_length)/1024/1024) AS secondary_indices_MB, # セカンダリインデックスのサイズ
+    floor((data_length+index_length)/1024/1024) AS sum_MB
+FROM 
+    information_schema.tables  
+WHERE
+    table_schema=database()  
+ORDER BY
+    sum_MB DESC;  
+```
