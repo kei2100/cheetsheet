@@ -208,6 +208,21 @@ dig _dmarc.example.com txt
 dig SRV _mongodb._tcp.example.com
 ```
 
+##### 逆引き
+
+IP アドレスからドメイン名を解決するには PTR レコードを登録する。
+例えば 199.59.150.99 からドメイン名を引くには 99.150.59.199.in-addr.arpa. に PTR レコードを登録する
+
+```
+99.150.59.199.in-addr.arpa.  IN  PTR  spruce-goose-bd.twitter.com.
+```
+
+確認は以下
+
+```
+$ dig -x 199.59.150.99
+```
+
 #### tcpdump
 ```bash
 # ASCII表示でループバックアドレス:８０への通信をダンプ
