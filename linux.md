@@ -366,6 +366,9 @@ openssl s_client -connect example.com:443 < /dev/null 2> /dev/null | openssl x50
 # 証明書チェーンの内容表示ワンライナー
 openssl s_client -servername server.example.com -connect server.example.com:443 -showcerts </dev/null >c.pem
 openssl crl2pkcs7 -nocrl -certfile c.pem | openssl pkcs7 -print_certs -text -noout
+
+# verification
+echo | openssl s_client -connect github.com:443 -brief
 ```
 
 ##### CSR pemの情報表示
