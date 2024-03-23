@@ -4,6 +4,15 @@
 $ gem which rails
 ```
 
+## Benchmark
+
+```ruby
+Benchmark.bm do |x|
+  x.report("benchmark1: ") { process1() }
+  x.report("benchmark2: ") { process2() }
+end
+```
+
 # Rails
 ## models
 ### validatorの内容確認
