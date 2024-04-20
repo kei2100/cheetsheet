@@ -148,6 +148,14 @@ cat << EOF > doc.txt
 EOF
 ```
 
+##### byte の 16進
+
+```bash
+$ echo \ | od -x
+0000000      0a20                                                        
+0000002
+```
+
 ### process
 ##### プロセスの環境変数
 ```bash
