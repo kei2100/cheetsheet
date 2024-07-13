@@ -123,6 +123,14 @@ perl -0 -pi -e 's/(\r\n|[\n\r\u2028\u2029\u0085])*\z/\n/'
 tr '[:upper:]' '[:lower:]'
 ```
 
+### jq
+
+##### JSON の複数項目を TSV に
+
+```bash
+cat mongo_slow_log | jq '[.t."$date", .attr.ns, .attr.docsExamined, .attr.storage.data.bytesRead] | @tsv' | sed -e 's/\"//g' | sed -e 's/\\t/\t/g' 
+```
+
 ### io
 ##### echo改行表示
 ```bash
