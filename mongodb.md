@@ -47,5 +47,6 @@ db.serverStatus().wiredTiger.cache["maximum bytes configured"]
 ### 全クエリをスローログとして出力
 
 ```
+# slowms -1 で起動する
 mongod --slowms=-1
 ```
