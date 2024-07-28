@@ -43,3 +43,9 @@ db.getCollectionNames().map(function(col) {
 ```
 db.serverStatus().wiredTiger.cache["maximum bytes configured"]
 ```
+
+### 全クエリをスローログとして出力
+
+```
+mongod --slowms=-1
+```
