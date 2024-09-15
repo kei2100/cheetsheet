@@ -1,7 +1,7 @@
-### ブランチを指定して解析
+### ローカルの設定ファイルで dry run
 
 ```bash
-RENOVATE_BASE_BRANCHES=${BRANCH} renovate --dry-run --token=${GITHUB_TOKEN} --log-file=renovate.log ${GITHUB_ORG}/${REPOSITORY}
+LOG_LEVEL=debug RENOVATE_CONFIG_FILE=renovate.json5 renovate --dry-run --platform=local > tmp/renovate.log
 ```
 
 ### Custom Manager Support using Regex
