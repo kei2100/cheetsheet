@@ -352,6 +352,10 @@ envdir: fatal: unable to switch to current directory: access denied
 メッセージ通りだがカレントディレクトリにpostgresユーザーでアクセスできない場合、このようなエラーになるので注意
 ```
 
+##### bash の終了コード
+
+https://tldp.org/LDP/abs/html/exitcodes.html
+
 ### pkg
 ##### alipineのedgeブランチ追加
 ```bash
