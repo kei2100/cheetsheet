@@ -545,3 +545,12 @@ zint -b QRCODE --binary -i test.txt
 ...
 ```
 
+### Parallel
+
+##### xargs で CPU 個数分並列実行
+
+```bash
+xargs -P $(nproc)
+```
+
+
