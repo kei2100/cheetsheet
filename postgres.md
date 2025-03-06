@@ -27,3 +27,16 @@
 ```
 SELECT CURRENT_USER
 ```
+
+## 無名コードブロック
+
+DOを使うと無名コードブロック（一時的な無名関数）を実行することができる
+
+```
+DO $$ BEGIN
+  -- dev-dbのみ実行
+  IF current_database() = 'dev-db' THEN
+    UPDATE foo SET bar = 'bar' WHERE bar = 'baz';
+  END IF;
+END $$;
+```
