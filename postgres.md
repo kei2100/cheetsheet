@@ -7,7 +7,20 @@
 * テーブル内容: \d <テーブル名>
 * テーブルの権限: \z <テーブル名：指定しないと一覧>
 * ページャーの on/off: \pset pager
-
+* default privileges の表示
+  ```
+  \ddp 
+  
+                 Default access privileges
+       Owner      | Schema |   Type   | Access privileges 
+  ----------------+--------+----------+-------------------
+   role_x         |        | function | =X/role_x
+   role_x         |        | sequence | 
+   role_x         |        | table    | 
+   role_x         |        | type     | =U/role_x
+  ```
+* TBD
+  
 ## SHOW
 
 |項目|内容|
