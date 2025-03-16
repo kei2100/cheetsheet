@@ -53,3 +53,33 @@ DO $$ BEGIN
   END IF;
 END $$;
 ```
+
+## CREATE DATABASE
+
+```
+-- app ユーザの作成
+CREATE USER app WITH PASSWORD '<password>';
+
+-- DB の作成
+CREATE DATABASE "my-db"
+
+-- データベースの所有権を app ユーザに付
+ALTER DATABASE "my-db" OWNER TO app;
+
+-- app ユーザに必要な権限を付与
+GRANT ALL PRIVILEGES ON DATABASE "my-db" TO app;
+
+# app ユーザーで入り直し
+psql -U app -p 5432 -h <database host> -d my-db
+
+-- public スキーマのすべてのテーブルに対する権限
+GRANT USAGE, CREATE ON SCHEMA public TO app;
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO app;
+GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO app;
+GRANT ALL PRIVILEGES ON ALL FUNCTIONS IN SCHEMA public TO app;
+
+-- 新しく作成されるオブジェクトに対するデフォルト権限を設定
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON TABLES TO app;
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON SEQUENCES TO app;
+ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON FUNCTIONS TO app;
+```
