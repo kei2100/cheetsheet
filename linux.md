@@ -553,4 +553,27 @@ zint -b QRCODE --binary -i test.txt
 xargs -P $(nproc)
 ```
 
+### Expantion　in bash
 
+#### シーケンス展開
+
+```
+# echo {a..c}
+a b c
+
+# echo {0..3}
+0 1 2 3
+
+# echo {0..3}a
+0a 1a 2a 3a
+
+# echo a{0..3}
+a0 a1 a2 a3
+```
+
+#### 値の切り出し
+
+* ${parameter#word}	先頭から前方最短一致した位置まで取り除く
+* ${parameter##word}	先頭から前方最長一致した位置まで取り除く
+* ${parameter%word}	末尾から後方最短一致した位置まで取り除く
+* ${parameter%%word}	末尾から後方最長一致した位置まで取り除く
