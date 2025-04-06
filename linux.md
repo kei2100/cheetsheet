@@ -120,7 +120,11 @@ perl -0 -pi -e 's/(\r\n|[\n\r\u2028\u2029\u0085])*\z/\n/'
 ##### 大文字小文字変換
 
 ```bash
-tr '[:upper:]' '[:lower:]'
+$ echo CASE | tr '[:upper:]' '[:lower:]'
+case
+
+$ echo case | tr '[:lower:]' '[:upper:]'
+CASE
 ```
 
 ### jq
