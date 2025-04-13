@@ -531,6 +531,12 @@ login daniel
 password qwerty
 ```
 
+##### curl で名前解決するアドレスを指定
+
+```
+ curl --resolve foo.example.com:443:127.0.0.1 https://foo.example.com
+```
+
 ### QR 
 ##### zint
 
