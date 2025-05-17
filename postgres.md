@@ -41,6 +41,13 @@
 SELECT CURRENT_USER
 ```
 
+## JSON エクスポート
+
+```sql
+SELECT json_agg(row_to_json(people))
+FROM people
+```
+
 ## 無名コードブロック
 
 DOを使うと無名コードブロック（一時的な無名関数）を実行することができる
