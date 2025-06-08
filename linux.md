@@ -537,6 +537,27 @@ password qwerty
  curl --resolve foo.example.com:443:127.0.0.1 https://foo.example.com
 ```
 
+##### curl json
+
+```
+# json post (-X POST -H "Content-Type: application/json" つけないで良い) 
+curl --json '{"key": "value"}' localhost:8080/path/to
+
+# ファイル
+curl --json @file.json localhost:8080/path/to
+
+# 標準入力
+curl --json @- localhost:8080/path/to < file.json
+
+# ヒアドキュメント
+curl --json @- localhost:8080/path/to << 'HERE'
+{"key": "value"}
+HERE
+
+# パイプ
+echo '{"key": "value"}' | curl --json @- localhost:8080/path/to
+```
+
 ### QR 
 ##### zint
 
