@@ -7,6 +7,7 @@
 * テーブル内容: \d <テーブル名>
 * テーブルの権限: \z <テーブル名：指定しないと一覧>
 * ページャーの on/off: \pset pager
+* MySQL でいうところこの \G 表示に切り替え: \x
 * default privileges の表示
   ```
   \ddp 
