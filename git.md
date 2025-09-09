@@ -51,3 +51,8 @@ $ git clone --filter=tree:0 <url>
 ## コミット履歴を切り捨ててクローンサイズを小さくする
 $ git clone --depth=1 <url>
 ```
+
+## マージコミットの内容確認
+
+`git log --graph --oneline --decorate` するとマージコミットの親コミット同士がわかりやすくなるので
+`git diff 親コミット1 親コミット2` する
