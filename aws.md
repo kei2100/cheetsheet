@@ -86,6 +86,13 @@ aws ecr get-login --region=ap-northeast-1 --no-include-email | sh
 aws ecr get-login-password | docker login --username AWS --password-stdin https://${AWS_ACCOUNT}.dkr.ecr.ap-northeast-1.amazonaws.com
 ```
 
+## CloudWatch Logs
+
+#### プロパティ名に . が含まれる JSON ログの検索方法
+```
+{ $.['foo.barId'] = "01974435-7220-7598-a530-2f81b2577d2d" }
+```
+
 ## AWS Account
 #### アカウント番号取得
 ```bash
