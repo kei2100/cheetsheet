@@ -43,6 +43,26 @@
 SELECT CURRENT_USER
 ```
 
+## 現在のセッションの ID (バックエンドプロセス ID: pid)
+
+```sql
+-- 現在の接続
+select pg_backend_pid();
+
+-- 接続している全プロセス
+select * from pg_stat_activity;  -- pid 列に出力される
+```
+
+```補足
+PostgreSQL は プロセスモデル で動作しています。
+クライアント（アプリケーションや psql など）が DB に接続するたびに、PostgreSQL は 1 つのバックエンドプロセスを生成します。
+各プロセスは OS が割り当てる識別番号（プロセスID = PID）を持っています。
+pg_stat_activity の pid 列には、この バックエンドプロセスの PID が表示されます。
+```
+
+
+
+
 ## JSON エクスポート
 
 ```sql
