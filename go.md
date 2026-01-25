@@ -26,3 +26,10 @@ CGO_ENABLED=1 しやすい
 ```
 docker run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp golang:1.20.5 env GOOS=linux GOARCH=amd64 CGO_ENABLED=1 go build -ldflags="-s -w" -o bin/app/linux/amd64 ./app
 ```
+
+### tool get & install
+
+```
+$ go get -tool github.com/foo/bar@latest
+$ go install tool
+```
