@@ -33,3 +33,9 @@ docker run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp golang:1.20.5 env GOO
 $ go get -tool github.com/foo/bar@latest
 $ go install tool
 ```
+
+### ディレクトリ配下のインタフェースをカンマ区切りで
+
+```
+$ go doc -all . | grep "^type .* interface" | awk '{print $2}' | paste -sd "," -
+```
