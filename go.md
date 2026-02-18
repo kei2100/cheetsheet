@@ -37,5 +37,5 @@ $ go install tool
 ### ディレクトリ配下のインタフェースをカンマ区切りで
 
 ```
-$ go doc -all . | grep "^type .* interface" | awk '{print $2}' | paste -sd "," -
+$ go doc -all -u . | grep "^type .* interface" | awk '{print $2}' | paste -sd "," -
 ```
