@@ -37,5 +37,6 @@ $ go install tool
 ### ディレクトリ配下のインタフェースをカンマ区切りで
 
 ```
+# -u: include unexported
 $ go doc -all -u . | grep "^type .* interface" | awk '{print $2}' | paste -sd "," -
 ```
