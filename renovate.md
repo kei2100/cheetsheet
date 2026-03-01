@@ -28,3 +28,9 @@ https://docs.renovatebot.com/modules/manager/regex/
   ]
 }
 ```
+
+### 設定ファイルのバリデーション
+
+```bash
+$ npx --package renovate -- renovate-config-validator renovate.json5
+```
