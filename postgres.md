@@ -119,3 +119,16 @@ ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON TABLES TO app;
 ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON SEQUENCES TO app;
 ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON FUNCTIONS TO app;
 ```
+
+## 改行を含む文字列値の INSERT
+
+```sql
+INSERT INTO api_keys (client_id, public_key_pem, ...) VALUES (
+'foobarbaz',
+$$-----BEGIN PUBLIC KEY-----
+MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE...
+-----END PUBLIC KEY-----
+$$,
+...
+);
+```
