@@ -127,6 +127,16 @@ $ echo case | tr '[:lower:]' '[:upper:]'
 CASE
 ```
 
+##### ランダム文字列
+
+```bash
+$ cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 8 | head -n 1
+
+# mac
+$ cat /dev/urandom | gtr -dc 'a-zA-Z0-9' | fold -w 8 | head -n 1
+
+```
+
 ### jq
 
 ##### JSON の複数項目を TSV に
